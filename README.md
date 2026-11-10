@@ -11,6 +11,8 @@ and region, exon length, distance to the nearest splice junction,
 evolutionary conservation, and the five-base sequence context) to score
 candidate sites and classify them as `"Positive"` or `"Negative"`.
 
+This is the package for my coursework.
+
 ## Installation
 
 Install the package from GitHub with `devtools`:
