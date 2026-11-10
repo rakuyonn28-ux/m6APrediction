@@ -1,0 +1,18 @@
+Package: m6APrediction
+Title: Predict N6-Methyladenosine Sites from RNA Sequence Features
+Version: 1.0.0
+Authors@R:
+    person("rakuyonn28-ux", email = "rakuyonn28@gmail.com", role = c("aut", "cre"))
+Description: Predicts N6-methyladenosine (m6A) sites in RNA from
+    sequence-derived features. The package applies a fitted random forest
+    classifier to a batch feature table or to a single site, and reports the
+    predicted probability together with a Positive or Negative classification.
+    Inputs include GC content, RNA type and region, log2-transformed exon
+    length and distance to the nearest splice junction, evolutionary
+    conservation, and the five-base DNA context.
+License: MIT
+Depends: R (>= 3.5.0), randomForest
+Imports: stats
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Config/roxygen2/version: 8.1.0
