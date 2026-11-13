@@ -82,8 +82,7 @@ positive and 7,338 negative sites.
 <figure>
 <img src="man/figures/roc_prc_precrec.png"
 alt="Complete ROC and precision-recall curves with precrec" />
-<figcaption aria-hidden="true">Complete ROC and precision-recall curves
-with precrec</figcaption>
+<figcaption aria-hidden="true"> ROC and precision-recall curves</figcaption>
 </figure>
 
 The area under the ROC curve (AUROC) is **0.885**, and the area under
