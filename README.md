@@ -3,7 +3,7 @@
 
 ## Overview
 
-Experimentally mapping N6-methyladenosine (m6A) sites is slow and expensive, 
+Experimentally finding N6-methyladenosine (m6A) sites is slow and expensive, 
 while using abundant RNA sequence data to predict them is more effective.
 `m6APrediction` addresses this by applying a fitted random forest
 classifier to genomic features (GC content, RNA type
