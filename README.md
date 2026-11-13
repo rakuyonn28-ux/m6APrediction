@@ -3,13 +3,12 @@
 
 ## Overview
 
-Experimentally finding N6-methyladenosine (m6A) sites is slow and expensive, 
-while using abundant RNA sequence data to predict them is more effective.
+Experimentally finding N6-methyladenosine (m6A) sites is slow and expensive.
 `m6APrediction` addresses this by applying a fitted random forest
-classifier to genomic features (GC content, RNA type
+model to genomic features (GC content, RNA type
 and region, exon length, distance to the nearest splice junction,
 evolutionary conservation, and the five-base sequence context) to find
-candidate sites and classify them as `"Positive"` or `"Negative"`.
+candidate sites and classify them as `"Positive"` or `"Negative"`, along with the probability.
 
 This is the package constructed for my coursework.
 
@@ -22,7 +21,7 @@ Install the package from GitHub with `devtools`:
 devtools::install_github("rakuyonn28-ux/m6APrediction")
 ```
 
-Alternatively, use `remotes`:
+Or use `remotes`:
 
 ``` r
 # install.packages("remotes")
@@ -31,7 +30,7 @@ remotes::install_github("rakuyonn28-ux/m6APrediction")
 
 ## Example
 
-The package exports two prediction functions:
+The package have two prediction functions (exported):
 
 - `prediction_multiple()` make predictions using a data frame of candidate sites.
 - `prediction_single()` Make predictions on one site and return a named character vector.
@@ -39,6 +38,7 @@ The package exports two prediction functions:
 The example data and the fitted model are provided in
 `inst/extdata/`.
 
+example code:
 ``` r
 library(m6APrediction)
 
@@ -89,6 +89,8 @@ The area under the ROC curve (AUROC) is **0.885**, and the area under
 the precision-recall curve (AUPRC) is **0.700**. This shows that the model 
 separates positive from negative sites well across a wide range of thresholds.
 
+## License
+MIT
 
 
 
