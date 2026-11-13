@@ -8,20 +8,20 @@ dna_encoding(dna_strings)
 }
 \arguments{
 \item{dna_strings}{Character vector of DNA sequences. Each sequence must
-contain only the bases A, T, C and G, and all sequences must have the
+contain the bases A, T, C and G, and all sequences must have the
 same length.}
 }
 \value{
-A data frame with one row per sequence and one column per nucleotide
-position, named \code{nt_pos1}, \code{nt_pos2}, ..., \code{nt_posN}. Every column is a
+A data frame with one row of sequence and one column per nucleotide position,
+named \code{nt_pos1}, \code{nt_pos2}, ..., \code{nt_posN}. Every column is a
 factor with levels \code{"A"}, \code{"T"}, \code{"C"} and \code{"G"}.
 }
 \description{
 Split equal-length DNA sequences into single nucleotides and return one
 categorical column per nucleotide position. Each position is a factor with
 levels \code{"A"}, \code{"T"}, \code{"C"} and \code{"G"}, so the columns can be used as
-categorical predictors by a random forest model. This is an internal helper
-for \code{\link[=prediction_multiple]{prediction_multiple()}} and is not exported.
+categorical predictors by a random forest model. This is an internal function
+for \code{\link[=prediction_multiple]{prediction_multiple()}}.
 }
 \seealso{
 \code{\link[=prediction_multiple]{prediction_multiple()}}, \code{\link[=prediction_single]{prediction_single()}}

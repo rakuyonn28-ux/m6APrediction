@@ -5,7 +5,7 @@ Authors@R:
     person("rakuyonn28-ux", email = "rakuyonn28@gmail.com", role = c("aut", "cre"))
 Description: Predicts N6-methyladenosine (m6A) sites in RNA from
     sequence-derived features. The package applies a fitted random forest
-    classifier to a batch feature table or to a single site, and reports the
+    classifier to make predictions on feature table or to a single site, and reports the
     predicted probability together with a Positive or Negative classification.
     Inputs include GC content, RNA type and region, log2-transformed exon
     length and distance to the nearest splice junction, evolutionary

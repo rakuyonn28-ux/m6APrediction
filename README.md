@@ -3,15 +3,15 @@
 
 ## Overview
 
-Experimentally mapping N6-methyladenosine (m6A) sites is slow and
-expensive, while RNA sequence data are cheap and abundant.
+Experimentally mapping N6-methyladenosine (m6A) sites is slow and expensive, 
+while using abundant RNA sequence data to predict them is more effective.
 `m6APrediction` addresses this by applying a fitted random forest
-classifier to sequence-derived genomic features (GC content, RNA type
+classifier to genomic features (GC content, RNA type
 and region, exon length, distance to the nearest splice junction,
-evolutionary conservation, and the five-base sequence context) to score
+evolutionary conservation, and the five-base sequence context) to find
 candidate sites and classify them as `"Positive"` or `"Negative"`.
 
-This is the package for my coursework.
+This is the package constructed for my coursework.
 
 ## Installation
 
@@ -33,11 +33,10 @@ remotes::install_github("rakuyonn28-ux/m6APrediction")
 
 The package exports two prediction functions:
 
-- `prediction_multiple()` scores a data frame of candidate sites.
-- `prediction_single()` scores one site and returns a named character
-  vector.
+- `prediction_multiple()` make predictions using a data frame of candidate sites.
+- `prediction_single()` Make predictions on one site and return a named character vector.
 
-The example data and the fitted model ship with the package in
+The example data and the fitted model are provided in
 `inst/extdata/`.
 
 ``` r
@@ -73,14 +72,12 @@ prediction_single(ml_fit,
 ```
 
 `exon_length` and `distance_to_junction` must already be
-log2-transformed. `DNA_5mer` is the five-base DNA context with the
-adenosine of interest in the central position.
+log2-transformed. `DNA_5mer` is the five-base DNA context.
 
 ## Model performance: ROC and precision-recall curves
 
-The classifier was evaluated on a test set containing 2,273
-positive and 7,338 negative sites (positive-to-negative ratio about
-0.31). The figure below was produced from the test-set predictions.
+The model was evaluated on a test set containing 2,273
+positive and 7,338 negative sites.
 
 <figure>
 <img src="man/figures/roc_prc_precrec.png"
@@ -89,21 +86,10 @@ alt="Complete ROC and precision-recall curves with precrec" />
 with precrec</figcaption>
 </figure>
 
-Performance at two decision thresholds:
-
-| Positive probability cutoff | Accuracy | Precision | Recall | FPR   |
-|-----------------------------|----------|-----------|--------|-------|
-| 0.5                         | 0.837    | 0.702     | 0.544  | 0.072 |
-| 0.1                         | 0.686    | 0.426     | 0.941  | 0.394 |
-
 The area under the ROC curve (AUROC) is **0.885**, and the area under
-the precision-recall curve (AUPRC) is **0.700**. The PRC baseline is
-**0.236**, equal to the proportion of positives in the test set.
+the precision-recall curve (AUPRC) is **0.700**. This shows that the model 
+separates positive from negative sites well across a wide range of thresholds.
 
-**Interpretation.**  The model separates positive from negative sites well 
-across a wide range of thresholds, and an AUROC of 0.885 confirms this. 
-In the PRC curve, the AUPRC of 0.700 is roughly three times the baseline, 
-so the model substantially enriches true m6A sites.
 
 
 

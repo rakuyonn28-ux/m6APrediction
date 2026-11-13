@@ -1,19 +1,18 @@
-# Functions reused from Practical 5. Add documentation in your new package.
 
 #' Encode DNA Sequences as Nucleotide-Position Factors
 #'
 #' Split equal-length DNA sequences into single nucleotides and return one
 #' categorical column per nucleotide position. Each position is a factor with
 #' levels `"A"`, `"T"`, `"C"` and `"G"`, so the columns can be used as
-#' categorical predictors by a random forest model. This is an internal helper
-#' for [prediction_multiple()] and is not exported.
+#' categorical predictors by a random forest model. This is an internal function
+#' for [prediction_multiple()].
 #'
 #' @param dna_strings Character vector of DNA sequences. Each sequence must
-#'   contain only the bases A, T, C and G, and all sequences must have the
+#'   contain the bases A, T, C and G, and all sequences must have the
 #'   same length.
 #'
-#' @return A data frame with one row per sequence and one column per nucleotide
-#'   position, named `nt_pos1`, `nt_pos2`, ..., `nt_posN`. Every column is a
+#' @return A data frame with one row of sequence and one column per nucleotide position,
+#'   named `nt_pos1`, `nt_pos2`, ..., `nt_posN`. Every column is a
 #'   factor with levels `"A"`, `"T"`, `"C"` and `"G"`.
 #'
 #' @seealso [prediction_multiple()], [prediction_single()]
